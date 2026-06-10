@@ -3,13 +3,13 @@
    Objetivo:
    - limpar e organizar orders em uma VIEW
    - combinar tabelas por IDs
-   - responder às perguntas do projeto
+   - responder Ã s perguntas do projeto
    - preparar base para ML posterior no Python
    ========================================================= */
 
 
 /* =========================================================
-   0) INSPEÇÃO INICIAL
+   0) INSPEÃ‡ÃƒO INICIAL
    ========================================================= */
 
 SELECT COUNT(*) AS total_orders FROM orders;
@@ -230,7 +230,7 @@ SELECT * FROM DBO.vw_missing_items_long;
 
 
 /* =========================================================
-   6) VIEW ANALÍTICA PRINCIPAL
+   6) VIEW ANALÃTICA PRINCIPAL
    junta orders + drivers + customers
    ========================================================= */
 
@@ -308,7 +308,7 @@ WHERE missing_rate IS NOT NULL;
 
 
 /* =========================================================
-   8) DISTRIBUIÇÃO POR REGIÃO
+   8) DISTRIBUIÃ‡ÃƒO POR REGIÃƒO
    ========================================================= */
 
 SELECT
@@ -324,7 +324,7 @@ ORDER BY problem_rate_pct DESC, total_orders DESC;
 
 
 /* =========================================================
-   9) DISTRIBUIÇÃO POR HORA E PERÍODO
+   9) DISTRIBUIÃ‡ÃƒO POR HORA E PERÃODO
    ========================================================= */
 
 SELECT
@@ -347,7 +347,7 @@ ORDER BY problem_rate_pct DESC;
 
 
 /* =========================================================
-   10) EVOLUÇÃO AO LONGO DO TEMPO
+   10) EVOLUÃ‡ÃƒO AO LONGO DO TEMPO
    ========================================================= */
 
 SELECT
@@ -371,7 +371,7 @@ ORDER BY order_date;
 
 
 /* =========================================================
-   11) MOTORISTAS ACIMA DA MÉDIA
+   11) MOTORISTAS ACIMA DA MÃ‰DIA
    requisito central do projeto
    ========================================================= */
 
@@ -404,8 +404,8 @@ ORDER BY d.problem_rate_pct DESC, d.total_orders DESC;
 
 
 /* =========================================================
-   12) MOTORISTA X HORÁRIO
-   correlação entre motorista e ordens problemáticas
+   12) MOTORISTA X HORÃRIO
+   correlaÃ§Ã£o entre motorista e ordens problemÃ¡ticas
    ========================================================= */
 
 SELECT
@@ -422,8 +422,8 @@ ORDER BY problem_rate_pct DESC, total_orders DESC;
 
 
 /* =========================================================
-   13) MOTORISTA X REGIÃO
-   ajuda a separar problema individual de problema sistêmico
+   13) MOTORISTA X REGIÃƒO
+   ajuda a separar problema individual de problema sistÃªmico
    ========================================================= */
 
 SELECT
@@ -440,8 +440,8 @@ ORDER BY problem_rate_pct DESC, total_orders DESC;
 
 
 /* =========================================================
-   14) CLIENTES COM RECORRÊNCIA DE RECLAMAÇÃO
-   útil para investigar hipótese de fraude do consumidor
+   14) CLIENTES COM RECORRÃŠNCIA DE RECLAMAÃ‡ÃƒO
+   Ãºtil para investigar hipÃ³tese de fraude do consumidor
    ========================================================= */
 
 SELECT
@@ -479,7 +479,7 @@ ORDER BY items_missing_num DESC, missing_rate DESC, order_amount_num DESC;
 
 
 /* =========================================================
-   16) ANÁLISE DE PRODUTOS E CATEGORIAS
+   16) ANÃLISE DE PRODUTOS E CATEGORIAS
    ========================================================= */
 
 SELECT
@@ -509,7 +509,7 @@ ORDER BY times_reported_missing DESC, estimated_loss DESC;
 
 
 /* =========================================================
-   17) PRODUTO / CATEGORIA X REGIÃO
+   17) PRODUTO / CATEGORIA X REGIÃƒO
    ========================================================= */
 
 SELECT
@@ -550,8 +550,8 @@ ORDER BY estimated_loss DESC, total_missing_products DESC;
 
 
 /* =========================================================
-   19) ENTREGAS COMPLETAS X RECLAMAÇÃO
-   aqui usamos a proxy disponível:
+   19) ENTREGAS COMPLETAS X RECLAMAÃ‡ÃƒO
+   aqui usamos a proxy disponÃ­vel:
    pedido marcado com items_missing > 0
    ========================================================= */
 
