@@ -1,2 +1,3 @@
+*.sql linguist-language=SQL
 *.ipynb linguist-language=Python
 *.pbix linguist-detectable=false
